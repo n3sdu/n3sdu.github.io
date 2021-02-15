@@ -1,0 +1,4 @@
+[submodule "registry"]
+	path = r
+	url = https://github.com/n3sdu/registry.git
+	branch = master
