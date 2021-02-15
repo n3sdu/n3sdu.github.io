@@ -1,0 +1,15 @@
+name: update-registry
+on:
+  workflow_dispatch:
+
+jobs:
+  update:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - run: git submodule update --init --recursive --remote
+      - uses: mikeal/publish-to-github-action@e5a27bbb5174edae8930d2250fc98a3a32478f81
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
